@@ -1,0 +1,31 @@
+{
+  "name": "auth",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "flux": "^3.1.2",
+    "jwt-decode": "^2.2.0",
+    "morgan": "^1.8.1",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-router": "^4.0.0",
+    "redis": "^2.7.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mz": "^2.6.0",
+    "react-scripts": "0.9.5",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "server": "node server",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "mocha test"
+  }
+}
