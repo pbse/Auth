@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Uncomment below to configure redis and use
-/**
+/*
 const redisClient = redis.createClient('port', 'url');
 const secret = "Secret Message";
 
@@ -43,6 +43,7 @@ app.use(JWTRedisSession({
   requestKey: "jwtSession",
   requestArg: "jwtToken"
 }));
-
 */
+
+
 module.exports = app;

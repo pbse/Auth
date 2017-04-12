@@ -38,4 +38,12 @@ describe('express serving', function () {
       .expect(200)
       .then(res => expect(res.text).to.contain('<div id="root"></div>'));
   });
+
+  it('responds to login call', function () {
+    return request(app)
+      .post('/user/login')
+      .expect('Content-Type', /json/)
+      .expect(500)
+      .then(res => expect(res.text).to.contain('"access_granted":false'));
+  });
 });
