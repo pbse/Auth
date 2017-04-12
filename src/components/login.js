@@ -10,10 +10,13 @@ class Login extends React.Component {
       password: '',
       status: ''
     };
+    this.login = this.login.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePass = this.handlePass.bind(this);
   }
 
-  login = (event) => {
-    event.preventDefault();
+  login(e) {
+    e.preventDefault();
     Auth.login(this.state.email, this.state.password)
       .then(() => {
         this.setState(function(prevState, props){
@@ -27,15 +30,15 @@ class Login extends React.Component {
       });
   }
 
-  handleEmail = (event) => {
-    const value = event.target.value;
+  handleEmail(e){
+    const value = e.target.value;
     this.setState(function(prevState, props){
       return {email: value};
     });
   }
 
-  handlePass = (event) => {
-    const value = event.target.value;
+  handlePass(e){
+    const value = e.target.value;
     this.setState(function(prevState, props){
       return {password: value};
     });
@@ -49,13 +52,13 @@ class Login extends React.Component {
         <form>
         <div>
           <label htmlFor="username">Username</label>
-          <input type="email" value={this.state.email} className="form-control" name="email" placeholder="Email" onChange={this.handleEmail()} required="required"/>
+          <input type="email" value={this.state.email} className="form-control" name="email" placeholder="Email" onChange={this.handleEmail} required="required"/>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
-          <input type="password" value={this.state.password} className="form-control" name="password" placeholder="Password" onChange={this.handlePass()} required="required" />
+          <input type="password" value={this.state.password} className="form-control" name="password" placeholder="Password" onChange={this.handlePass} required="required" />
         </div>
-        <button type="submit" className="btn btn-default" onClick={this.login.bind(this)}>Submit</button>
+        <button type="submit" className="btn btn-default" onClick={this.login}>Submit</button>
       </form>
     </div>
     );
