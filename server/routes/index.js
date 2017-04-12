@@ -1,7 +1,6 @@
 const express = require('express'),
 	router = express.Router(),
 	path = require('path'),
-	JWTRedisSession = require("jwt-redis-session"),
 	request = require("request");
 
 

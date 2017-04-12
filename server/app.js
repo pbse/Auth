@@ -4,7 +4,8 @@ const express = require('express'),
 	path = require('path'),
 	bodyParser = require('body-parser'),
 	routes = require('./routes/index'),
-	redis = require("redis");
+	redis = require("redis"),
+	JWTRedisSession = require("jwt-redis-session");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+// Uncomment below to configure redis and use
 /**
 const redisClient = redis.createClient('port', 'url');
 const secret = "Secret Message";
