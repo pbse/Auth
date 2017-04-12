@@ -14,7 +14,7 @@ class UserStoreClass extends EventEmitter {
     this.token = null;
     this.user = null;
     this.isLoggedIn = false;
-    Dispatcher.register(this.actionDispatcher.bind(this));
+    this.dispatch_token = Dispatcher.register(this.actionDispatcher.bind(this));
   }
 
   addChangeListener(callback) {

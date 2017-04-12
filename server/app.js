@@ -7,8 +7,6 @@ const express = require('express'),
 	redis = require("redis");
 
 const app = express();
-const redisClient = redis.createClient('port', 'url'),
-	secret = "Secret Message";
 
 // Setup logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
@@ -25,6 +23,10 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+/**
+const redisClient = redis.createClient('port', 'url');
+const secret = "Secret Message";
+
 redisClient.on('connect', function() {
   console.log('Connected to Redis');
 });
@@ -40,4 +42,5 @@ app.use(JWTRedisSession({
   requestArg: "jwtToken"
 }));
 
+*/
 module.exports = app;

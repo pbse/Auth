@@ -8,8 +8,8 @@
     "flux": "^3.1.2",
     "jwt-redis-session": "^1.0.5",
     "morgan": "^1.8.1",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
+    "react": "^15.5.0",
+    "react-dom": "^15.5.0",
     "react-router": "^4.0.0",
     "redis": "^2.7.1",
     "request": "^2.81.0"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import UserStore from '../../stores/UserStore'
-import { loginUser } from '../../actions/UserActions';
+import UserStore from '../stores/UserStore'
+import { loginUser } from '../actions/UserActions';
 import Auth from '../services/auth_service';
 
 /** App Class
