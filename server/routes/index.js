@@ -16,7 +16,8 @@ router.post('/user/login', (req, res) => {
   };
 
   request.post(options, (error, response, body) => {
-    if (response.statusCode >= 200 && response.statusCode <=304) {
+  	if (!error && response.statusCode >= 200 && response.statusCode <=304) {
+      
       // this will be attached to the JWT
       var claims = {
         user: body.user,

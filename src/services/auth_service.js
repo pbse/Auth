@@ -15,13 +15,14 @@ class AuthService {
     };
     return new Promise((resolve, reject) => {
       request(options, (error, response, body) => {
-        if(response.statusCode >= 200 &&  response.statusCode <= 304) {
+        if(!error && response.statusCode >=200 && response.statusCode <=304) {
           body = JSON.parse(body);
           if(body.access_granted)  
             resolve(loginUser(body.token));
-          else reject("Email/Pass is Invalid");
+          else reject("Email/Pass in Invalid");  
         }
-        else reject("Email/Pass is Invalid");
+        else reject("Email/Pass in Invalid");
+        
       })
     });
   }
