@@ -1,3 +1,4 @@
+// index.js
 import React from 'react';
 import { Link } from 'react-router';
 import UserStore from '../stores/UserStore'
@@ -10,7 +11,7 @@ class App extends React.Component {
 
   constructor() {
     super()
-    this.state = this.loginState();
+    this.state = this.getState();
     this.onChange = this.onChange.bind(this);
     this.navLinks = this.navLinks.bind(this);
     this.logout = this.logout.bind(this);
@@ -41,20 +42,18 @@ class App extends React.Component {
    * @return isUserLoggedIn, User Object
    */
     
-  get loginState() {
-    const obj = UserStore.getState();
+  getState() {
     return {
-      isLoggedIn: obj._isLoggedIn,
-      user: obj._user,
+      isLoggedIn: UserStore.getLoggedIn()
     };
   }
 
 
   onChange(){
-    this.setState(this.getLoginState());
+    this.setState(this.getState());
   }
 
-  get navLinks() {
+  navLinks() {
     if (!this.state.isLoggedIn) {
       return (
         <ul>
@@ -82,7 +81,7 @@ class App extends React.Component {
     return (
 
       <div className='App'>
-        {this.navLinks}
+        {this.navLinks()}
         {this.props.children}
       </div>
     );

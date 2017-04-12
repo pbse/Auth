@@ -17,13 +17,13 @@ class EnsureLoggedInContainer extends React.Component {
      */  
     getCurrentState() {
       return {
-        userLoggedIn: UserStore.isLoggedIn()
+        userLoggedIn: UserStore.getLoggedIn()
       };
     }
 
     componentDidMount() {  
       if (!this.state.userLoggedIn) {
-        browserHistory.push("/user/login")
+        browserHistory.push("/login")
       }
     }
 

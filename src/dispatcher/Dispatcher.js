@@ -1,3 +1,4 @@
+// Dispatcher.js
 import {Dispatcher} from 'flux';
 
 class DispatcherClass extends Dispatcher {

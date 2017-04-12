@@ -1,3 +1,4 @@
+// UserActions.js
 import Dispatcher from '../dispatcher/Dispatcher';
 import {browserHistory} from 'react-router';
 
@@ -24,5 +25,5 @@ export function logoutUser() {
     type: 'LOGOUT_USER'
   });
   browserHistory.push("/");
-  
+
 };

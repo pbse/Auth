@@ -1,6 +1,6 @@
+// auth_service.js
 import request from 'request';
 import { loginUser, logoutUser } from '../actions/UserActions';
-import UserStore from '../stores/UserStore';
 
 class AuthService {
 

@@ -6,8 +6,8 @@ import Home from './components/home';
 import Login from './components/login';
 import EnsureLoggedInContainer from './components/EnsureLoggedInContainer';
 
-const Routes = () => (
-  <Router>
+const Routes = (props) => (
+  <Router {...props}>
     <Route path="/" component={App}>
         <Route path="login" component={Login} />
         <Route component={EnsureLoggedInContainer}>

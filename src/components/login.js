@@ -1,3 +1,4 @@
+// login.js
 import React from 'react';
 import Auth from '../services/auth_service';
 
@@ -10,9 +11,6 @@ class Login extends React.Component {
       password: '',
       status: ''
     };
-    this.login = this.login.bind(this);
-    this.handleEmail = this.handleEmail.bind(this);
-    this.handlePass = this.handlePass.bind(this);
   }
 
   login(e) {
@@ -51,13 +49,13 @@ class Login extends React.Component {
         <form>
         <div>
           <label>Email</label>
-          <input type="email" value={this.state.email} placeholder="Email" onChange={this.handleEmail} required="required"/>
+          <input type="email" value={this.state.email} placeholder="Email" onChange={this.handleEmail.bind(this)} required="required"/>
         </div>
         <div>
           <label>Password</label>
-          <input type="password" value={this.state.password} placeholder="Password" onChange={this.handlePass} required="required" />
+          <input type="password" value={this.state.password} placeholder="Password" onChange={this.handlePass.bind(this)} required="required" />
         </div>
-        <button type="submit" onClick={this.login}>Submit</button>
+        <button type="submit" onClick={this.login.bind(this)}>Submit</button>
       </form>
     </div>
     );

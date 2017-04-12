@@ -1,13 +1,9 @@
+// UserStore.js
 import jwt from 'jwt-decode';
 import Dispatcher from '../dispatcher/Dispatcher';
 import { EventEmitter } from 'events';
 
 class UserStoreClass extends EventEmitter {
-
-  /** UserStore Constructor
-   * Create token, userObject, and boolean for user's login status
-   * Registers the Dispatcher on Load
-   */
 
   constructor() {
     super();
@@ -25,15 +21,15 @@ class UserStoreClass extends EventEmitter {
     this.removeListener('change', callback);
   }
 
-  get getToken() {
+  getToken() {
     return this.token;
   }
 
-  get getUser() {
+  getUser() {
     return this.user;
   }
 
-  get isLoggedIn() {
+  getLoggedIn() {
     return this.isLoggedIn;
   }
 
@@ -57,6 +53,9 @@ class UserStoreClass extends EventEmitter {
         this.isLoggedIn = false;
         this.user = null;
         this.emitChange();
+        break;
+
+      case 'REGISTER_USER':
         break;
 
       default:
