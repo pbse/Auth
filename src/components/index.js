@@ -1,12 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 import UserStore from '../../stores/UserStore'
 import { loginUser } from '../../actions/LoginActions';
-import { Link } from 'react-router';
 import Auth from '../services/auth_service';
 
 /** App Class
- * It is the Starting Component.
- * Renders other page container components 
  */
 class App extends React.Component {
 
@@ -15,6 +13,7 @@ class App extends React.Component {
     this.state = this.loginState();
     this.onChange = this.onChange.bind(this);
     this.navLinks = this.navLinks.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   // Check if Token is already set
@@ -68,7 +67,10 @@ class App extends React.Component {
       return (
         <ul>
           <li>
-            <Link className="Link" to="/home">Home</Link>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <p onclick={this.logout}>Logout</p>
           </li>
         </ul>
       )

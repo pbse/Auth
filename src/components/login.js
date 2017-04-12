@@ -47,18 +47,17 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
-        <p>{this.state.status}</p>
+        <h1>Login {this.state.status}</h1>
         <form>
         <div>
-          <label htmlFor="username">Username</label>
-          <input type="email" value={this.state.email} className="form-control" name="email" placeholder="Email" onChange={this.handleEmail} required="required"/>
+          <label>Email</label>
+          <input type="email" value={this.state.email} placeholder="Email" onChange={this.handleEmail} required="required"/>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input type="password" value={this.state.password} className="form-control" name="password" placeholder="Password" onChange={this.handlePass} required="required" />
+        <div>
+          <label>Password</label>
+          <input type="password" value={this.state.password} placeholder="Password" onChange={this.handlePass} required="required" />
         </div>
-        <button type="submit" className="btn btn-default" onClick={this.login}>Submit</button>
+        <button type="submit" onClick={this.login}>Submit</button>
       </form>
     </div>
     );
