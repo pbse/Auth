@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt from 'jwt-decode';
 import Dispatcher from '../dispatcher/Dispatcher';
 import { EventEmitter } from 'events';
 
@@ -47,7 +47,7 @@ class UserStoreClass extends EventEmitter {
       case 'LOGIN_USER':
         const token = payload.action.data;
         this.token = token;
-        this.user = jwt.decode(token).user;
+        this.user = jwt(token).user;
         this.isLoggedIn = true;
         this.emitChange();
         break;
