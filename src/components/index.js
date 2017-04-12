@@ -69,7 +69,7 @@ class App extends React.Component {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <p onclick={this.logout}>Logout</p>
+            <Link onClick={this.logout.bind(this)}>Logout</Link>
           </li>
         </ul>
       )

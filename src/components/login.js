@@ -23,7 +23,7 @@ class Login extends React.Component {
       })
       .catch((err) => {
         this.setState(function(prevState, props){
-          return {status: "Error"}
+          return {status: err}
         });
       });
   }
