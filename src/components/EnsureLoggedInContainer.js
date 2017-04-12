@@ -2,7 +2,6 @@
 import React from 'react';
 import {browserHistory} from 'react-router';
 import UserStore from '../stores/UserStore';
-import { loginUser } from '../actions/LoginActions';
 
 class EnsureLoggedInContainer extends React.Component {
 
