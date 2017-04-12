@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import Dispatcher from '../dispatchers/Dispatcher';
+import Dispatcher from '../dispatcher/Dispatcher';
 import { EventEmitter } from 'events';
 
 class UserStoreClass extends EventEmitter {
@@ -12,9 +12,9 @@ class UserStoreClass extends EventEmitter {
   constructor() {
     super();
     this.token = null;
-    this.dispatchToken = AppDispatcher.register(this.actionDispatcher.bind(this));
     this.user = null;
     this.isLoggedIn = false;
+    Dispatcher.register(this.actionDispatcher.bind(this));
   }
 
   addChangeListener(callback) {
