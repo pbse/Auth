@@ -9,10 +9,9 @@ export function loginUser(token, pathname) {
     data: token,
   });
 
-  if(pathname) {
+  if (pathname) {
     browserHistory.push(pathname);
-  }
-  else {
+  } else {
     localStorage.setItem('token', token);
     browserHistory.push("/");
   }

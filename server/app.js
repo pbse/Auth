@@ -1,11 +1,11 @@
 // server/app.js
 const express = require('express'),
-	morgan = require('morgan'),
-	path = require('path'),
-	bodyParser = require('body-parser'),
-	routes = require('./routes/index'),
-	redis = require("redis"),
-	JWTRedisSession = require("jwt-redis-session");
+  morgan = require('morgan'),
+  path = require('path'),
+  bodyParser = require('body-parser'),
+  routes = require('./routes/index'),
+  redis = require("redis"),
+  JWTRedisSession = require("jwt-redis-session");
 
 const app = express();
 

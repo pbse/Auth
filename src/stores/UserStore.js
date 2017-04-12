@@ -47,7 +47,7 @@ class UserStoreClass extends EventEmitter {
         this.isLoggedIn = true;
         this.emitChange();
         break;
-        
+
       case 'LOGOUT_USER':
         this.token = null;
         this.isLoggedIn = false;
@@ -65,5 +65,3 @@ class UserStoreClass extends EventEmitter {
   }
 
 };
-
-export default new UserStoreClass();

@@ -1,7 +1,7 @@
 const express = require('express'),
-	router = express.Router(),
-	path = require('path'),
-	request = require("request");
+  router = express.Router(),
+  path = require('path'),
+  request = require("request");
 
 
 /** Login Route
@@ -16,8 +16,8 @@ router.post('/user/login', (req, res) => {
   };
 
   request.post(options, (error, response, body) => {
-  	if (!error && response.statusCode >= 200 && response.statusCode <=304) {
-      
+    if (!error && response.statusCode >= 200 && response.statusCode <= 304) {
+
       // this will be attached to the JWT
       var claims = {
         user: body.user,
@@ -29,7 +29,7 @@ router.post('/user/login', (req, res) => {
           token: token
         });
       });
-    } 
+    }
 
     // Error Occured
     else {
